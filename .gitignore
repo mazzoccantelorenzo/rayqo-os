@@ -1,0 +1,16 @@
+# Binaries & ISOs
+*.bin
+*.iso
+*.img
+*.o
+
+# Build artifacts
+build/
+dist/
+target/
+
+# OS / Editor specific
+.DS_Store
+.idea/
+.vscode/
+*.swp

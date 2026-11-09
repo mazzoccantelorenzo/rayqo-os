@@ -14,7 +14,7 @@
 
 <br/>
 
-*Inspired by [GopherOS](https://github.com/achilleasa/gopher-os), [Writing an OS in Rust](https://os.phil-opp.com/), and [Operating Systems: Three Easy Pieces (OSTEP)](https://pages.cs.wisc.edu/~remzi/OSTEP/).*
+[GopherOS](https://github.com/achilleasa/gopher-os) · [Writing an OS in Rust](https://os.phil-opp.com/) · [Operating Systems: Three Easy Pieces (OSTEP)](https://pages.cs.wisc.edu/~remzi/OSTEP/)
 
 </div>
 
@@ -47,16 +47,10 @@
 
 ---
 
-## 📐 Engineering Standards
-
 ### 1. Git Discipline & History
 - **Linear History**: Keep branches rebased; do not create merge bubbles on `main`.
 - **Atomic Commits**: Each commit represents a single logical unit of work that compiles and passes checks.
 - **WIP & Fixup Workflow**: Never push uncurated WIP commits. Use fixup commits:
-  ```bash
-  git commit --fixup <commit-hash>
-  git rebase -i --autosquash <base-branch>
-  ```
 - **Commit Format**: Follow [Conventional Commits](https://www.conventionalcommits.org/):
   ```text
   <type>(<scope>): <short imperative summary>
@@ -65,14 +59,14 @@
   ```
   *Types*: `feat`, `fix`, `refactor`, `docs`, `chore`, `perf`, `build`.
 
-### 2. Bare-Metal Go Constraints
+### Go Constraints
 - **Zero Allocations in Early Boot**: The Go GC and standard heap do not exist until the PMM and Paging are active.
 - **No Stdlib**: Rely solely on custom memory-mapped I/O and low-level primitives.
 - **Explicit Inlining & Stack Bounds**: Annotate critical boot paths with `//go:nosplit` to prevent stack check traps.
 
 ---
 
-## 🧰 Environment & Toolchain
+## Environment & Toolchain
 
 | Component | Tool / Target |
 | :--- | :--- |
@@ -84,6 +78,6 @@
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
